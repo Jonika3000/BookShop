@@ -1,0 +1,86 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\icons8_books_400px_1.ico" />
+    <None Remove="Resources\icons8_books_400px_1.png" />
+    <None Remove="Resources\icons8_eye_144px.png" />
+    <None Remove="Resources\icons8_eye_144px_1.png" />
+    <None Remove="Resources\icons8_eye_24px.png" />
+    <None Remove="Resources\icons8_eye_24px_1.png" />
+    <None Remove="Resources\icons8_four_squares.svg" />
+    <None Remove="Resources\icons8_four_squares_30px.png" />
+    <None Remove="Resources\icons8_four_squares_30px_2.png" />
+    <None Remove="Resources\icons8_four_squares_30px_3.png" />
+    <None Remove="Resources\icons8_four_squares_30px_4 - Копировать.png" />
+    <None Remove="Resources\icons8_four_squares_30px_4.png" />
+    <None Remove="Resources\icons8_four_squares_30px_5.png" />
+    <None Remove="Resources\icons8_four_squares_480px.png" />
+    <None Remove="Resources\icons8_four_squares_480px_1.png" />
+    <None Remove="Resources\icons8_four_squares_480px_2.png" />
+    <None Remove="Resources\icons8_four_squares_480px_3.png" />
+    <None Remove="Resources\icons8_four_squares_480px_4.png" />
+    <None Remove="Resources\icons8_four_squares_480px_5.png" />
+    <None Remove="Resources\icons8_natural_food_48px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resources\icons8_four_squares_5.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0-rc.2.22472.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0-rc.2.22472.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0-rc.2.22472.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\icons8_books_400px_1.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_books_400px_1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_eye_144px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_eye_144px_1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_eye_24px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_eye_24px_1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_four_squares_480px_1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_four_squares_480px_2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_four_squares_480px_3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_four_squares_480px_5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_natural_food_48px.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

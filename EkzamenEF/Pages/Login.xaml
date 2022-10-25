@@ -1,0 +1,173 @@
+﻿<Page x:Class="EkzamenEF.Pages.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EkzamenEF.Pages"
+      mc:Ignorable="d" 
+     Height="600" Width="1000"
+      Title="Login" Background="White">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries> 
+                <ResourceDictionary Source="/Styles/CheckBox.xaml"/>
+                <ResourceDictionary Source="/Styles/Button.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1"> 
+                 <Image Width="400" Height="400"
+                    Source="/Resources/icons8_books_400px_1.png"/> 
+        </Grid>
+        <Grid Grid.Column="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                         VerticalAlignment="Center">
+                <TextBlock Text="Welcome!"
+                           FontSize="35"
+                           FontWeight="Bold"
+                          Margin="10" />
+                <TextBlock Text="Login"
+                           FontSize="22"
+                           FontWeight="Regular"
+                         Margin="0,6"  />
+                <TextBox x:Name="TextBoxLogin" 
+                         FontSize="20"
+                         Width="230">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBlock Text="Password"
+                           FontSize="22"
+                           FontWeight="Regular" Margin="0,6"/>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <PasswordBox  Foreground="Black"
+                             Background="White"
+                             BorderThickness="1"
+                             Width="230"    
+                                 HorizontalAlignment="Left"
+                                 x:Name="TextBoxPass"
+                           FontSize="20" PasswordChanged="TextBoxPass_PasswordChanged"  >
+                            <PasswordBox.Style>
+                                <Style TargetType="{x:Type PasswordBox}">
+                                    <Style.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="15" />
+                                        </Style>
+                                    </Style.Resources>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type PasswordBox}">
+                                                <Border x:Name="border" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                    <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsEnabled" Value="false">
+                                                        <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="true">
+                                                        <Setter Property="BorderBrush" TargetName="border" Value="#FF7EB4EA"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsKeyboardFocused" Value="true">
+                                                        <Setter Property="BorderBrush" TargetName="border" Value="#FF569DE5"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                                                <Condition Property="IsSelectionActive" Value="false"/>
+                                            </MultiTrigger.Conditions>
+                                            <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                        </MultiTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </PasswordBox.Style>
+                        </PasswordBox>
+                    </StackPanel>
+                </StackPanel>
+                <TextBox  FontSize="20" 
+                          Width="230"
+                            x:Name="MyTextBox"
+                          Text="{Binding Password, Mode=TwoWay, ElementName=TextBoxPass}" Visibility="Collapsed" TextChanged="MyTextBox_TextChanged" >
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <CheckBox Name="revealModeCheckBox" 
+                                  Content="    Show password"
+                                  Foreground="Black"
+                          Cursor="Hand"
+                          FontSize="18"
+                          Margin="0,6"
+                                  FontWeight="Regular"
+              IsChecked="False" Style="{DynamicResource myCheckboxStyle}"
+              Checked="CheckBox_Changed" Unchecked="revealModeCheckBox_Unchecked"/>
+                <Button x:Name="ButtonLogin"
+                        Width="180"
+                        FontSize="18"
+                        Height="30" Cursor="Hand"
+                        Background="#f69272" 
+                        BorderBrush="Gray"
+                        Content="Login"
+                        Margin="0,8">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <TextBlock Text="or" 
+                           FontSize="18"
+                           FontWeight="Regular" 
+                           HorizontalAlignment="Center"/>
+                <Button x:Name="ButtonRegister"
+                        Width="180" Cursor="Hand"
+                        FontSize="18"
+                        Height="30"
+                        Background="#f69272" 
+                        BorderBrush="Gray"
+                        Content="Register"
+                        Margin="0,8">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Style="{DynamicResource ButtonForgotPass}"
+                        Margin="6" 
+                        Content="Forgot your password?"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        FontSize="13"
+                        HorizontalAlignment="Center"
+                        Width="150">
+                        
+                </Button>
+                <TextBlock Text=""
+                           FontSize="22"
+                           FontWeight="Regular"
+                            Margin="0,6"
+                           Foreground="#C12727"
+                           x:Name="ErrorTextBox"
+                           Visibility="Hidden"/>
+            </StackPanel>
+                
+        </Grid>
+    </Grid>
+</Page>
