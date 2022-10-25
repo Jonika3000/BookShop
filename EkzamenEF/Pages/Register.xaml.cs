@@ -64,7 +64,8 @@ namespace EkzamenEF.Pages
                 if (tmp == null)
                 {
                     db.accounts.Add(a);
-                    db.SaveChanges(); 
+                    db.SaveChanges();
+                    ((MainWindow)Application.Current.MainWindow).Container.Navigate(new Login());
                 }
                 else
                     StringError("An account with the same name already exists");
@@ -74,7 +75,7 @@ namespace EkzamenEF.Pages
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            ((MainWindow)Application.Current.MainWindow).Container.Navigate(new Login());
         }
         private bool CheckErrors()
         {

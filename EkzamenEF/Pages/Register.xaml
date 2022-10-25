@@ -174,7 +174,8 @@
                             Margin="0,6"
                            Foreground="#C12727"
                            x:Name="ErrorTextBox"
-                           Visibility="Hidden"/>
+                           Visibility="Hidden"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
 
         </Grid>

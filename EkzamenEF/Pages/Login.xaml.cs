@@ -1,4 +1,8 @@
-﻿using System.Reflection;
+﻿using EkzamenEF.Models;
+using System;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -45,6 +49,66 @@ namespace EkzamenEF.Pages
         {
             TextBoxPass.Password = MyTextBox.Text;
         }
+        private bool CheckErrors()
+        {
+            string log = string.Empty;
+            string pass = string.Empty;
+            Application.Current.Dispatcher.Invoke(new Action(() => {
+                log = TextBoxLogin.Text;
+                pass = TextBoxPass.Password.ToString();
+            }));
+            if ( log == string.Empty)
+            {
+                StringError("Login empty");
+                return false;
+            }
+            if ( pass == string.Empty)
+            {
+                StringError("Password empty");
+                return false;
+            }  
+             return true;
+        }
+        private void StringError(string err)
+        {
+            Application.Current.Dispatcher.Invoke(new Action(() => {
+                ErrorTextBox.Text = err;
+            ErrorTextBox.Visibility = Visibility.Visible;
+            }));
+        }
+        private void Search()
+        {
+            if (!CheckErrors())
+                return;
+            using (var db = new ApplicationContext())
+            {
+                var l = string.Empty;
+                Application.Current.Dispatcher.Invoke(new Action(() => { l = TextBoxLogin.Text; }));
+                var p = TextBoxPass.Password.ToString();
+                var Acc = db.accounts.Where(c => c.login == l && c.password == p).FirstOrDefault();
+                if (Acc == null)
+                {
+                    StringError("Incorrect data");
+                    return;
+                }
+                StringError("  data");
+            }
+        }
 
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            var t = new Task(Search);
+            t.Start();
+        }
+
+        private void ButtonRegister_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).Container.Navigate(new Register());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).Container.Navigate(new ForgotPassword());
+        }
     }
 }

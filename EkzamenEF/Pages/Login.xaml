@@ -124,7 +124,8 @@
                         Background="#f69272" 
                         BorderBrush="Gray"
                         Content="Login"
-                        Margin="0,8">
+                        Margin="0,8"
+                        Click="ButtonLogin_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -142,7 +143,8 @@
                         Background="#f69272" 
                         BorderBrush="Gray"
                         Content="Register"
-                        Margin="0,8">
+                        Margin="0,8"
+                        Click="ButtonRegister_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -156,7 +158,8 @@
                         BorderThickness="0"
                         FontSize="13"
                         HorizontalAlignment="Center"
-                        Width="150">
+                        Width="150"
+                        Click="Button_Click">
                         
                 </Button>
                 <TextBlock Text=""
@@ -165,7 +168,8 @@
                             Margin="0,6"
                            Foreground="#C12727"
                            x:Name="ErrorTextBox"
-                           Visibility="Hidden"/>
+                           Visibility="Hidden"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
                 
         </Grid>
