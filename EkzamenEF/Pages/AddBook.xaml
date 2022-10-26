@@ -1,0 +1,105 @@
+﻿<Page x:Class="EkzamenEF.Pages.AddBook"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EkzamenEF.Pages" xmlns:MyControls="clr-namespace:EkzamenEF.Helpers"
+      mc:Ignorable="d" 
+        Height="600" Width="1000"      
+      Title="AddBook"
+      Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Image x:Name="ImageBook"
+                   Margin="20"
+                   Height="300"
+                   Width="250"
+                   VerticalAlignment="Top"/> 
+            </Grid>
+            <Grid Grid.Row="1">
+                <Button x:Name="ButtonSelectImage"
+                        Width="180"
+                        FontSize="18"
+                        Height="30" Cursor="Hand"
+                        Background="#f69272" 
+                        BorderBrush="Gray"
+                        Content="Select image"
+                        Margin="0,50"
+                       VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid> 
+        </Grid>
+        <Grid Grid.Column="1">
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Margin="10">
+                <TextBlock Text="Book name" 
+                           Foreground="Black"
+                           FontSize="20"
+                           FontWeight="Regular"
+                           />
+                <TextBox x:Name="TextBoxName" 
+                         FontSize="20"
+                         Width="230"
+                         HorizontalAlignment="Left">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBlock Text="Book author" 
+                           Foreground="Black"
+                           FontSize="20"
+                           FontWeight="Regular"
+                           />
+                <TextBox x:Name="TextBoxAuthor" 
+                         FontSize="20"
+                         Width="230"
+                         HorizontalAlignment="Left">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBlock Text="Page count" 
+                           Foreground="Black"
+                           FontSize="20"
+                           FontWeight="Regular"
+                           />
+                <TextBox x:Name="TextBoxPageCount" 
+                         FontSize="20"
+                         Width="230"
+                         HorizontalAlignment="Left">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBlock Text="Publishing house" 
+                           Foreground="Black"
+                           FontSize="20"
+                           FontWeight="Regular"
+                           />
+                
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

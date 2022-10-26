@@ -45,10 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resources\icons8_books_400px_1.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
