@@ -36,9 +36,8 @@ namespace EkzamenEF.Pages
         private void SendMail()
         {
             Random random = new Random();
-              code = random.Next(10000, 100000);
-
-            MailAddress from = new MailAddress("fremidisk@gmail.com", "MinuBook Password Reestablish");
+              code = random.Next(10000, 100000); 
+            MailAddress from = new MailAddress("edu.minu@gmx.com", "MinuBook Password Reestablish");
             MailAddress to = new MailAddress(email);
             MailMessage m = new MailMessage(from, to);
             m.Subject = "Enter this code to the right field";
@@ -47,10 +46,10 @@ namespace EkzamenEF.Pages
 
             SmtpClient smtp = new SmtpClient("mail.gmx.com", 587);
             smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("edu.minu@yandex.ru", "Qwerty1337Q");
+            smtp.Credentials = new NetworkCredential("edu.minu@gmx.com", "Qwerty1337");
             smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
             smtp.EnableSsl = true;
-             smtp.Send(m);
+            smtp.Send(m);
         }
         private bool AccountExist()
         {

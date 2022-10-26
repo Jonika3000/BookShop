@@ -91,7 +91,12 @@ namespace EkzamenEF.Pages
                     StringError("Incorrect data");
                     return;
                 }
-                StringError("  data");
+                if (Acc.admin == true)
+                {
+                    Application.Current.Dispatcher.Invoke(new Action(() => {
+                        ((MainWindow)Application.Current.MainWindow).Container.Navigate(new Admin(Acc));
+                    }));
+                }
             }
         }
 

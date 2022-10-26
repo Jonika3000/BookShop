@@ -1,0 +1,74 @@
+﻿<Page x:Class="EkzamenEF.Pages.Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EkzamenEF.Pages"
+      mc:Ignorable="d" 
+      Height="600" Width="1000"
+      Title="Admin"
+       Background="White">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Button.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Home"
+                    Width="70" Margin="15,0"
+                        Style="{DynamicResource MenuButton}"  
+                         />
+                <Button Content="Add Book"
+                    Width="90" Margin="15,0"
+                        Style="{DynamicResource MenuButton}"  
+                        Name="AddBookButton" />
+                <Button Content="Edit Book"  
+                    Width="90"
+                        Style="{DynamicResource MenuButton}" 
+                        />
+                <Button Content="Delete Book" 
+                    Width="120"
+                        Style="{DynamicResource MenuButton}" 
+                        />
+                <Button Content="Add a share"  
+                    Width="120"
+                        Style="{DynamicResource MenuButton}" 
+                        />
+                <Button Content="Add admin account" 
+                    Width="175"
+                        Style="{DynamicResource MenuButton}" 
+                        />
+                
+            </StackPanel>
+            <StackPanel Orientation="Vertical"  Margin="30,0" 
+                        HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                    <Ellipse Height="30" Width="30"
+                                 Cursor="Hand"  x:Name="Avataru" 
+                                     MouseLeftButtonDown="Avataru_MouseLeftButtonDown" 
+                                     StrokeThickness="1" Stroke="#f69272">
+                        <Ellipse.Fill>
+                            <ImageBrush 
+                                ImageSource="/Resources/icons8_natural_food_48px.png"
+                               />
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Frame x:Name="Container"
+               NavigationUIVisibility="Hidden"
+                   Margin="10"/>
+        </Grid>
+    </Grid>
+</Page>

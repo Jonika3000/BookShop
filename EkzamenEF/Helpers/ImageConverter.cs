@@ -1,15 +1,10 @@
-﻿ 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿ using System; 
+using System.IO; 
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Player
+namespace EkzamenEF.Helpers
 {
     public static class ImageConverter  
     {
@@ -30,6 +25,7 @@ namespace Player
              }
             return null;
         }
+
         public static Image ConvertByteArrayToBitmapImage(Byte[] bytes)
         {
             if(bytes != null)
@@ -46,6 +42,26 @@ namespace Player
             }
             return null;
         }
+        public static ImageBrush ToImageBrushConvert(Byte[] img)
+        {
+            ImageBrush brush;
+            BitmapImage bi;
+            using (var ms = new MemoryStream(img))
+            {
+                brush = new ImageBrush();
+
+                bi = new BitmapImage();
+                bi.BeginInit();
+                bi.CreateOptions = BitmapCreateOptions.None;
+                bi.CacheOption = BitmapCacheOption.OnLoad;
+                bi.StreamSource = ms;
+                bi.EndInit();
+            }
+
+            brush.ImageSource = bi;
+            return brush;
+        }
+
     }
 
 }

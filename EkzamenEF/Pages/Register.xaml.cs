@@ -57,7 +57,7 @@ namespace EkzamenEF.Pages
             a.email = TextBoxEmail.Text;
             a.password = TextBoxPass.Password.ToString();
             a.login = TextBoxLogin.Text;
-
+            a.admin = false;
             using (var db = new ApplicationContext())
             {
                 var tmp = db.accounts.Where(q => q.login == TextBoxLogin.Text).FirstOrDefault();

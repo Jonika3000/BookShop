@@ -26,6 +26,7 @@ namespace EkzamenEF.Models
         public float priceForSale { get; set; }
         public string continuation { get; set; }
         public byte[] photo { get; set; }
+        public int count { get; set; }
 
     }
 }
