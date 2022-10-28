@@ -22,8 +22,8 @@ namespace EkzamenEF.Models
         public int pagesCount { get; set; } 
         public string genre { get; set; }   
         public DateTime date { get; set; }  
-        public float price { get;set; }
-        public float priceForSale { get; set; }
+        public double price { get;set; }
+        public double priceForSale { get; set; }
         public string continuation { get; set; }
         public byte[] photo { get; set; }
         public int count { get; set; }

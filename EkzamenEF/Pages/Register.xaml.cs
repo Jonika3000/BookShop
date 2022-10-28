@@ -1,9 +1,11 @@
 ﻿using EkzamenEF.Models;
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls; 
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace EkzamenEF.Pages
 {
@@ -58,6 +60,9 @@ namespace EkzamenEF.Pages
             a.password = TextBoxPass.Password.ToString();
             a.login = TextBoxLogin.Text;
             a.admin = false;
+            var bm = new BitmapImage();
+            bm.UriSource = new Uri("/Resources/icons8_account_144px.png", UriKind.RelativeOrAbsolute);
+            a.avatar = EkzamenEF.Helpers.ImageConverter.getJPGFromImageControl(bm);
             using (var db = new ApplicationContext())
             {
                 var tmp = db.accounts.Where(q => q.login == TextBoxLogin.Text).FirstOrDefault();

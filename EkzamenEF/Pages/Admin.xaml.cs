@@ -1,18 +1,7 @@
 ﻿using EkzamenEF.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EkzamenEF.Pages
 {
@@ -31,6 +20,51 @@ namespace EkzamenEF.Pages
         private void Avataru_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonAuthor_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new AddAuthor());
+        }
+
+        private void ButtonAddBook_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new AddBook());
+        }
+
+        private void AddHouse_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new AddPublishingHouses());
+        }
+
+        private void AddAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new AddAdmin());
+        }
+
+        private void ButtonDeleteBook_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new DeleteBook());
+        }
+
+        private void ButtonEditBook_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new EditBook());
+        }
+
+        private void DeletePublishingHouse_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new DeletePublishingHouse());
+        }
+
+        private void DeleteAuthor_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Navigate(new DeleteAuthor());
         }
     }
 }
