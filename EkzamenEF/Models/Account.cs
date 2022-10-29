@@ -15,6 +15,6 @@ namespace EkzamenEF.Models
         public string password { get; set; }
          public string email { get; set; }
         public bool admin { get; set; }
-        public byte[] avatar { get; set; }
+        public byte[]? avatar { get; set; }
     }
 }

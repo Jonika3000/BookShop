@@ -97,6 +97,12 @@ namespace EkzamenEF.Pages
                         ((MainWindow)Application.Current.MainWindow).Container.Navigate(new Admin(Acc));
                     }));
                 }
+                else
+                {
+                    Application.Current.Dispatcher.Invoke(new Action(() => {
+                        ((MainWindow)Application.Current.MainWindow).Container.Navigate(new NewsFeed(Acc));
+                    }));
+                }
             }
         }
 

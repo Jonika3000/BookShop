@@ -60,9 +60,12 @@ namespace EkzamenEF.Pages
             a.password = TextBoxPass.Password.ToString();
             a.login = TextBoxLogin.Text;
             a.admin = false;
-            var bm = new BitmapImage();
-            bm.UriSource = new Uri("/Resources/icons8_account_144px.png", UriKind.RelativeOrAbsolute);
-            a.avatar = EkzamenEF.Helpers.ImageConverter.getJPGFromImageControl(bm);
+            var bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri("/Resources/icons8_account_144px.png", UriKind.RelativeOrAbsolute);
+            bitmap.DecodePixelHeight = 200;
+            bitmap.EndInit(); 
+            a.avatar = EkzamenEF.Helpers.ImageConverter.getJPGFromImageControl(bitmap);
             using (var db = new ApplicationContext())
             {
                 var tmp = db.accounts.Where(q => q.login == TextBoxLogin.Text).FirstOrDefault();

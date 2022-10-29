@@ -28,6 +28,7 @@
     <None Remove="Resources\icons8_four_squares_480px_3.png" />
     <None Remove="Resources\icons8_four_squares_480px_4.png" />
     <None Remove="Resources\icons8_four_squares_480px_5.png" />
+    <None Remove="Resources\icons8_home_500px_1.png" />
     <None Remove="Resources\icons8_natural_food_48px.png" />
     <None Remove="Resources\icons8_Search_64px_2.png" />
   </ItemGroup>
@@ -78,6 +79,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\icons8_four_squares_480px_5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icons8_home_500px_1.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\icons8_natural_food_48px.png">

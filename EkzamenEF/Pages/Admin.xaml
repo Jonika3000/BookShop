@@ -78,22 +78,8 @@
                 </StackPanel>
                 
             </Grid>
-            <StackPanel Orientation="Vertical"  Margin="30,0" 
-                        HorizontalAlignment="Right">
-                <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Center">
-                    <Ellipse Height="30" Width="30"
-                                 Cursor="Hand"  x:Name="Avataru" 
-                                     MouseLeftButtonDown="Avataru_MouseLeftButtonDown" 
-                                     StrokeThickness="1" Stroke="#f69272">
-                        <Ellipse.Fill>
-                            <ImageBrush 
-                                ImageSource="/Resources/icons8_natural_food_48px.png"
-                               />
-                        </Ellipse.Fill>
-                    </Ellipse>
-                </StackPanel>
-            </StackPanel>
+           
+            
         </Grid>
         <Grid Grid.Row="1">
             <Frame x:Name="Container"

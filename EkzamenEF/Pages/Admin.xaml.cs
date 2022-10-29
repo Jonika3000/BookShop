@@ -16,11 +16,7 @@ namespace EkzamenEF.Pages
             InitializeComponent();
             this.account = account;
         }
-
-        private void Avataru_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+         
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -65,6 +61,11 @@ namespace EkzamenEF.Pages
         private void DeleteAuthor_Click(object sender, RoutedEventArgs e)
         {
             Container.Navigate(new DeleteAuthor());
+        }
+
+        private void ButtonAvatar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
