@@ -12,11 +12,124 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Column="0">
             <Image Name="ImageBook"
                    Height="250"
                    Width="200"/>
+        </Grid>
+        <Grid Grid.Column="1">
+          
+               
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Margin="10">
+                    <TextBlock Text="Name"
+                       Name="TextBlockName"
+                       FontWeight="Bold"
+                       Margin="20"
+                       FontSize="30"/>
+                    <TextBlock Text="Publishing House"
+                       FontSize="20"
+                       FontWeight="Regular"/>
+                    <TextBlock x:Name="PublishingHouseTextBlock"
+                        FontSize="16"
+                       FontWeight="Regular"/>
+                    <TextBlock Text="Author"
+                       FontSize="20"
+                       FontWeight="Regular"/>
+                    <TextBlock x:Name="TextBlockAuthor"
+                        FontSize="16"
+                       FontWeight="Regular"/>
+                    <TextBlock Text="Pages"
+                       FontSize="20"
+                       FontWeight="Regular"/>
+                    <TextBlock x:Name="TextBlockPages"
+                        FontSize="16"
+                       FontWeight="Regular"/>
+                    <TextBlock Text="Genre"
+                       FontSize="20"
+                       FontWeight="Regular"/>
+                    <TextBlock x:Name="TextBlockGenre"
+                        FontSize="16"
+                       FontWeight="Regular"/>
+                    <TextBlock Text="Release date"
+                       FontSize="20"
+                       FontWeight="Regular"/>
+                    <TextBlock x:Name="TextBlockDate"
+                        FontSize="16"
+                       FontWeight="Regular"/>
+                    <TextBlock Text="Continuation"
+                       FontSize="20"
+                       FontWeight="Regular"/>
+                    <TextBlock x:Name="TextBlockContinuation"
+                        FontSize="16"
+                       FontWeight="Regular"/>
+                    <TextBlock x:Name="TextBlockPrice"
+                        FontSize="16"
+                       FontWeight="Bold"
+                               Text="200"
+                               HorizontalAlignment="Right"
+                               Margin="80,0"
+                               Foreground="#022168"
+                               />
+                    <Button x:Name="ButtonBuy"
+                        Width="180"
+                        FontSize="18"
+                        Height="50" Cursor="Hand"
+                            HorizontalAlignment="Right"
+                        Background="#f69272" 
+                        BorderBrush="Gray"
+                        Content="Buy"
+                        Margin="0,8"
+                        Click="ButtonBuy_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Name="ImageAuthor"
+                   Height="100"
+                   Width="100"/>
+                        <StackPanel Orientation="Vertical"
+                                    Margin="10">
+                            <TextBlock x:Name="TextBlockNameA"
+                                   Text="Arsen"
+                                       FontSize="20"
+                                       FontWeight="Regular"
+                                       />
+                            <TextBlock x:Name="TextBlockAgeA"
+                                       Text="312"
+                                       FontSize="16"
+                                       />
+                        </StackPanel>
+                       
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,20">
+                        <Image Name="ImageHouse"
+                   Height="100"
+                   Width="100"/>
+                        <StackPanel Orientation="Vertical"
+                                    Margin="10">
+                            <TextBlock x:Name="TextBlockNameH"
+                                   Text="Arsen"
+                                       FontSize="20"
+                                       FontWeight="Regular"
+                                       />
+                            <TextBlock x:Name="TextBlockDescriptionH"
+                                       Text="312"
+                                       FontSize="16"
+                                       />
+                        </StackPanel>
+
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>

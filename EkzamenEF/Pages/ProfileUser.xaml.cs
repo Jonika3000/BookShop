@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EkzamenEF.Models;
+using EkzamenEF.Helpers;
 
 namespace EkzamenEF.Pages
 {
@@ -20,9 +22,28 @@ namespace EkzamenEF.Pages
     /// </summary>
     public partial class ProfileUser : Page
     {
-        public ProfileUser()
+        Account account;
+        public ProfileUser(Account account)
         {
             InitializeComponent();
+            this.account = account;
+            SetData();
+        }
+        private void SetData()
+        {
+            ImageAvatar.Source = ImageConverter.ConvertByteArrayToBitmapImage(account.avatar).Source;
+            TextBlockLogin.Text = account.login;
+            TextBlockEmail.Text = account.email;
+        }
+
+        private void ButtonAvatar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonChangePass_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

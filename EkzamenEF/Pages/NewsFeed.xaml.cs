@@ -81,7 +81,7 @@ namespace EkzamenEF.Pages
 
         private void ButtonAvatar_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Navigate(new ProfileUser(account));
         }
 
         private void SearchTermTextBox_TextChanged(object sender, TextChangedEventArgs e)

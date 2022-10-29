@@ -16,10 +16,12 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
-        <WrapPanel
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <WrapPanel
             Name="WrapPanelBooks"
             Orientation="Horizontal">
-            
+
             </WrapPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

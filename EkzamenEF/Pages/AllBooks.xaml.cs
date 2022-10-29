@@ -83,6 +83,7 @@ namespace EkzamenEF.Pages
         {
             var b = new Button();
             b.Style = Resources["BookButton"] as Style;
+            b.Click += B_Click;
             var stack = new StackPanel();
             var img = new Image();
             var text = new TextBlock();
@@ -101,6 +102,11 @@ namespace EkzamenEF.Pages
             b.Content = stack;
 
             return b;
-        }  
+        }
+
+        private void B_Click(object sender, RoutedEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
