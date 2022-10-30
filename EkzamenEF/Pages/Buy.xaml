@@ -15,6 +15,27 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
+            <Button x:Name="ButtonBack"
+                        Width="30"
+                        FontSize="18"
+                        Height="30" Cursor="Hand"
+                            HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                        Background="Transparent" 
+                        BorderBrush="Gray"
+                        Margin="10"
+                        Click="ButtonBack_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+              
+                <Image  
+                   Height="25"
+                   Width="25"
+                    Source="/Resources/icons8_undo_208px.png"/>
+            </Button>
             <Image Name="ImageBook"
                    Height="250"
                    Width="200"/>

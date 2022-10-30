@@ -7,33 +7,36 @@
       mc:Ignorable="d" Background="White"
      Height="550" Width="950"
       Title="ProfileUser">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Button.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button x:Name="ButtonAvatar"
-                        Width="280" Cursor="Hand"
+                        Width="250" 
                         FontSize="18" 
-                        Height="280" 
-                    Background="Transparent"
+                        Height="250" 
+                        VerticalAlignment="Top" 
                         BorderBrush="Gray" 
                         Margin="10"
+                        Style="{DynamicResource AvatarButton}"
                        Click="ButtonAvatar_Click">
             <Image Source="/Resources/icons8_home_500px_1.png"
-                       Width="250"
-                   Name="ImageAvatar"/>
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="100"/>
-                </Style>
-            </Button.Resources>
+                       Width="245"
+                   Name="ImageAvatar"/> 
         </Button>
         <Grid Grid.Column="1"
               Margin="20">
             <StackPanel Orientation="Vertical"
-                        VerticalAlignment="Center">
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left">
                 <TextBlock Text="Login"
                            FontSize="25"
                            FontWeight="SemiBold"/>

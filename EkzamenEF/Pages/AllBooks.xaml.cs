@@ -15,15 +15,18 @@ namespace EkzamenEF.Pages
     {
         string search;
         List<Book> books;
-        public AllBooks()
+        Account account;    
+        public AllBooks(Account account)
         {
             InitializeComponent();
             AllSet();
+            this.account = account; 
         }
-        public AllBooks(string search, bool isGenre)
+        public AllBooks(string search, bool isGenre, Account account)
         {
             InitializeComponent();
             this.search = search;
+            this.account = account;
             if (isGenre)
             {
                 GenreSet();
@@ -84,6 +87,7 @@ namespace EkzamenEF.Pages
             var b = new Button();
             b.Style = Resources["BookButton"] as Style;
             b.Click += B_Click;
+            b.Tag = book.id;
             var stack = new StackPanel();
             var img = new Image();
             var text = new TextBlock();
@@ -106,7 +110,15 @@ namespace EkzamenEF.Pages
 
         private void B_Click(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            var b = sender as Button;
+            Book book;
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.books.Load();
+                  book = db.books.FirstOrDefault(q => q.id.ToString() == b.Tag.ToString());
+            }
+
+            ((MainWindow)Application.Current.MainWindow).Container.Navigate(new Buy(book, account));
         }
     }
 }
