@@ -67,6 +67,22 @@
                         </Style>
                     </Button.Resources>
                 </Button>
+                <Button x:Name="ButtonSignOut"
+                        Width="180"
+                        FontSize="18"
+                        Height="35" Cursor="Hand" 
+                        HorizontalAlignment="Left"
+                        Background="#f69272" 
+                        BorderBrush="Gray"
+                        Content="Sign out"
+                        Margin="0,10"
+                        Click="ButtonSignOut_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

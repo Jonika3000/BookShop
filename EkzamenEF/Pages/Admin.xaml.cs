@@ -61,11 +61,11 @@ namespace EkzamenEF.Pages
         private void DeleteAuthor_Click(object sender, RoutedEventArgs e)
         {
             Container.Navigate(new DeleteAuthor());
-        }
+        } 
 
-        private void ButtonAvatar_Click(object sender, RoutedEventArgs e)
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Navigate(new NewsFeed(account));
         }
     }
 }

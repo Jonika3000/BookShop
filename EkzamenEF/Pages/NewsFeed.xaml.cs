@@ -31,10 +31,9 @@ namespace EkzamenEF.Pages
             using (ApplicationContext db = new ApplicationContext())
             {
                 db.accounts.Load();
-                this.account = db.accounts.FirstOrDefault(a => a.id == account.id);
-                db.SaveChanges();
+                this.account = db.accounts.FirstOrDefault(a => a.id == account.id); 
             }
-            if (account.avatar == null)
+            if (account.avatar == null || account.avatar.Length == 0)
             {
                 ImageAvatar.Source = new BitmapImage(new System.Uri("/Resources/icons8_account_144px.png"
                     , System.UriKind.RelativeOrAbsolute));

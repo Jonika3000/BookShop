@@ -29,7 +29,8 @@
                 <Button Content="Home"
                     Margin="15,0"
                         Style="{DynamicResource MenuButton}"  
-                         />
+                        Name="ButtonHome"
+                        Click="ButtonHome_Click"/>
                 <Button Content="Add Book"
                       Margin="15,0"
                         Style="{DynamicResource MenuButton}"  
@@ -43,9 +44,7 @@
                         Style="{DynamicResource MenuButton}" 
                         Name="ButtonDeleteBook"
                         Click="ButtonDeleteBook_Click"/>
-                <Button Content="Add a share"   
-                        Style="{DynamicResource MenuButton}" 
-                        />
+               
                 <Button Content="Add admin account"  
                         Style="{DynamicResource MenuButton}" 
                         Name="AddAdmin"

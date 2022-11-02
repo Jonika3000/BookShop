@@ -30,7 +30,7 @@ namespace EkzamenEF.Pages
         }
         private void SetData()
         {
-            if(account.avatar == null)
+            if(account.avatar == null || account.avatar.Length == 0)
             {
                 ImageAvatar.Source = new BitmapImage(new System.Uri("/Resources/icons8_account_144px.png"
                     , System.UriKind.RelativeOrAbsolute));
@@ -62,6 +62,11 @@ namespace EkzamenEF.Pages
         private void ButtonChangePass_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).Container.Navigate(new ForgotPassword());
+        }
+
+        private void ButtonSignOut_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).Container.Navigate(new Login());
         }
     }
 }
